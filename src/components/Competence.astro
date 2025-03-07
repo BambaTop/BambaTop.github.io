@@ -1,0 +1,110 @@
+---
+import Icon from './Icon.astro';
+---
+
+	<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="skills-container">
+					<!-- Core Technologies -->
+					<div class="tech-group">
+						<h2>Langages de programmation</h2>
+						<div class="tech-grid">
+							<div class="tech-item"><img src="../../../public/assets/html.png" alt="HTML">HTML</div>
+							<div class="tech-item"><img src="../../../public/assets/css.png" alt="CSS">CSS</div>
+							<div class="tech-item"><img src="../../../public/assets/js.png" alt="JavaScript">JavaScript</div>
+							<div class="tech-item"><img src="../../../public/assets/php.png" alt="PHP">PHP</div>
+							<div class="tech-item"><img src="../../../public/assets/java-logo.png" alt="Java">Java</div>
+							<div class="tech-item"><img src="../../../public/assets/c.png" alt="C">C</div>
+							<div class="tech-item"><img src="../../../public/assets/sql.png" alt="SQL">SQL</div>
+						</div>
+					</div>
+			
+					<!-- Other Technologies & Tools -->
+					<div class="tech-group">
+						<h2>Outils utilisés</h2>
+						<div class="tech-grid">
+							<div class="tech-item"><img src="../../../public/assets/github.png" alt="GitHub">GitHub</div>
+							<div class="tech-item"><img src="../../../public/assets/staruml.png" alt="StarUML">StarUML</div>
+							<div class="tech-item"><img src="../../../public/assets/figma.png" alt="Figma">Figma</div>
+							<div class="tech-item"><img src="../../../public/assets/android-studio.png" alt="Android Studio">Android Studio</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+
+    .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tech-group {
+    background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tech-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+</style>

@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout title="About | Bamba TOP" description="About Bamba Top">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Merci d'être arriver ici, maintenant je vais vous parler de mon parcours et de mes compétences."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="a"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Passionné par l'informatique, j'ai choisi de faire un <strong>BAC STI2D</strong> au 
+						<a href="https://www.site.ac-aix-marseille.fr/lyc-rempart/spip/">lycée Rempart</a> à Marseille.  
+						Grâce aux jeux vidéo, j'ai toujours cherché à raisonner <strong>comme un informaticien</strong> dès mon plus jeune âge.  
+						Après l'obtention de mon Bac, j'ai décidé de venir en <strong>Île-de-France</strong> afin de saisir davantage d'opportunités.  
+						C'est ainsi que j'ai intégré l'<a href="https://www.iutsf.u-pec.fr/">IUT de Fontainebleau</a>, encouragé par les conseils de mon oncle.
+					</p>
+					<br>
+					<p>
+						Durant ma <strong>première année de BUT Informatique</strong>, j'ai découvert les bases de la programmation avec 
+						<strong>C</strong> (langage système) et <strong>Java</strong> (orienté objet).  
+						J'ai également travaillé sur du développement web avec <strong>HTML, CSS</strong> et un peu de <strong>JavaScript</strong>.  
+					</p>
+					<br>
+					<p>
+						Depuis, j'ai approfondi mes compétences en <strong>JavaScript</strong>, et j'ai aussi exploré d'autres langages et outils.  
+						Ma formation m'a permis de mieux comprendre les <strong>architectures logicielles</strong>, d'expérimenter de nouveaux langages
+						et d'améliorer mes <strong>compétences en algorithmie et en développement web</strong>.  
+					</p>
+					<br>
+					<p>
+						Pour ce qui est de l'avenir, je vise une école d'ingénieur en alternance afin d'acquérir plus d'expériences dans le monde du travail mais aussi plus de compétences qui me permettront de devenir un excellent développeur.
+					</p>
+				</div>
+			</section>
+			
+			
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="skills-container">
+					<div class="tech-group">
+						<h3>Langages de programmation</h3>
+						<br />
+						<div class="tech-grid">
+							<div class="tech-item"><img src="../../../public/assets/html.png" alt="HTML">HTML</div>
+							<div class="tech-item"><img src="../../../public/assets/css.png" alt="CSS">CSS</div>
+							<div class="tech-item"><img src="../../../public/assets/js.png" alt="JavaScript">JavaScript</div>
+							<div class="tech-item"><img src="../../../public/assets/php.png" alt="PHP">PHP</div>
+							<div class="tech-item"><img src="../../../public/assets/java.png" alt="Java">Java</div>
+							<div class="tech-item"><img src="../../../public/assets/c.png" alt="C">C</div>
+							<div class="tech-item"><img src="../../../public/assets/sql.png" alt="SQL">SQL</div>
+						</div>
+					</div>
+			
+					
+					<div class="tech-group">
+						<h3>Outils utilisés</h3>
+						<div class="tech-grid">
+							<div class="tech-item"><img src="../../../public/assets/github.png" alt="GitHub">GitHub</div>
+							<div class="tech-item"><img src="../../../public/assets/staruml.png" alt="StarUML">StarUML</div>
+							<div class="tech-item"><img src="../../../public/assets/docker.png" alt="Figma">Docker</div>
+							<div class="tech-item"><img src="../../../public/assets/android-studio.png" alt="Android Studio">Android Studio</div>
+							<div class="tech-item"><img src="../../../public/assets/latex.png" alt="LaTex">LaTex</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+
+	.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tech-group {
+	background-color: var(--gray-999_40);
+	box-shadow: var(--shadow-sm);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    justify-items: center;
+	background-color: var(--gray-999_40);
+		
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gray-999_40);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.tech-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+
+.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box { 
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
